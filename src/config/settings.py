@@ -1,5 +1,9 @@
 from datetime import datetime, timedelta
 from dataclasses import dataclass
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 @dataclass
 class DateRange:
