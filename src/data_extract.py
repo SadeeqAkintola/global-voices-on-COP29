@@ -342,3 +342,27 @@ class TwitterSearchAPI:
             print("\nFailed combinations:")
             for keyword, date_range in failed:
                 print(f"- {keyword} for {date_range}")
+
+
+keywords_1 = [
+"#NetZero",
+"#ParisAgreement",
+"#Sustainability",
+"#COP29Outcomes",
+"#COP29Agreement",
+"#COP29Resolution",
+"#GreenEnergy",
+"#ClimateJustice",
+"#FridaysForFuture", 
+"#ExtinctionRebellion", 
+"#ClimateStrike",
+"#PeopleNotProfit", 
+"#ClimateAfrica",
+"#ClimateAsia",
+"#ClimateEU",
+"#ClimateAmerica", 
+"#GreenEconomy",
+"#NatureBasedSolutions", 
+"#COP29Debate",
+"#Reindeer",
+]
