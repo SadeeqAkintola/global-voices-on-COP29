@@ -1,6 +1,3 @@
-"""
-Main entry point for Twitter data collection.
-"""
 from twitter_scraper import TwitterSearchAPI
 from config.settings import DATE_RANGES
 from config.keywords import CLIMATE_KEYWORDS

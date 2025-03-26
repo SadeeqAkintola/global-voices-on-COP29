@@ -73,12 +73,22 @@ The dataset includes **182,347 tweets** collected between **11 October 2024 and 
 ├── analysis_results_with_sentiments-3.csv  # Cleaned and annotated dataset
 ├── visuals/                      # Exported figures (optional)
 └── src/
-    ├── absa_analysis.py
-    ├── engagement_analysis.py
-    ├── time_series_trends.py
-    ├── clustering_model.py
-    └── wordclouds_ngrams.py
-```
+    ├── absa_analysis.py         # Aspect-Based Sentiment Analysis
+    ├── engagement_analysis.py   # Engagement Metrics Analysis
+    ├── time_series_trends.py    # Temporal Analysis
+    ├── clustering_model.py      # Topic Clustering
+    ├── wordclouds_ngrams.py     # Text Visualization
+    ├── twitter_scraper.py       # Twitter Data Collection
+    ├── twitter_main.py          # Main Entry Point
+    ├── data_extract.py          # Data Extraction Utilities
+    ├── config/
+    │   ├── __init__.py
+    │   ├── settings.py          # Configuration Settings
+    │   └── keywords.py          # Search Keywords
+    └── utils/
+        ├── __init__.py
+        ├── logger.py            # Logging Configuration
+        └── data_processor.py    # Data Processing Utilities
 
 ---
 

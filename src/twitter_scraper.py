@@ -1,6 +1,3 @@
-"""
-Twitter data collection using Data365.co API.
-"""
 import os
 import requests
 import time
@@ -11,6 +8,7 @@ from dotenv import load_dotenv
 
 from config.settings import BASE_URL, MAX_RETRIES, INITIAL_WAIT, MAX_WAIT, DateRange, OUTPUT_DIR
 from utils.logger import setup_logger
+from utils.data_processor import create_tweet_dataframe, select_columns, clean_dataframe
 
 logger = setup_logger('twitter_scraper')
 
