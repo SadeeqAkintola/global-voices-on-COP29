@@ -1,151 +1,124 @@
-# global-voices-on-COP29
-# COP29 Twitter Sentiment Analysis
 
-## Project Overview
-This repository contains the implementation of Aspect-Based Sentiment Analysis (ABSA) on Twitter data collected during COP29. The project analyzes 180,000 tweets to understand public sentiment across various aspects of climate change discussions using GPT4-mini for efficient and accurate sentiment analysis.
+# 🌍 Global Voices on COP 29: A Cross-Country Twitter Analysis
 
-## Requirements
-```
-python>=3.8
-pytorch>=2.0.0
-transformers>=4.30.0
-openai>=0.28
-pandas>=1.5.0
-numpy>=1.23.0
-matplotlib>=3.6.0
-seaborn>=0.12.0
-```
+**Conference:** 5th World Conference on Climate Change and Global Warming  
+**Venue:** Vienna, Austria | **Date:** 7–9 March 2025  
+**Lead Author:** Oluwole Fagbohun  
+**Collaborators:** Ifeoluwa Wuraola, Sadeeq Akintola, Nelson Ogbeide, Ilemona Abutu, Temitope Kadri, Joshua Obodai, Anuoluwapo Gabriel, Bisola Kayode, Okiki-Jesu Timothy Olumide, Peter Adetola Adetunji, Mgbame Michael  
 
-## Data Structure
-The analysis uses three CSV files containing Twitter data:
-```
-data/
-├── pre_cop29.csv        # Pre-COP29 tweets 
-├── during_cop29.csv     # During-COP29 tweets 
-└── post_cop29.csv       # Post-COP29 tweets 
-```
+---
 
-## Project Structure
-```
-cop29-sentiment/
-│
-├── data/                # CSV files containing Twitter data
-├── processed/           # Cleaned and preprocessed data
-└── models/             # Model configuration and prompts
-│
-├── src/
-│   ├── preprocessing/   # Data cleaning and preparation
-│   ├── models/         # GPT4-mini integration
-│   ├── analysis/       # ABSA implementation
-│   └── visualization/  # Plotting and visualization tools
-│
-├── notebooks/          # Jupyter notebooks for analysis
-├── results/           # Output visualizations and analysis
-└── configs/          # Configuration files
-```
+## 📘 Project Description
 
-## Key Features
-1. Multi-aspect sentiment analysis covering:
-   - Climate Action and Policy
-   - Global Cooperation
-   - Finance and Climate Justice
-   - Technology and Innovation
-   - Public Awareness
-   - Adaptation and Resilience
-   - Loss and Damage
-   - Carbon Markets
+This project performs a comprehensive, multilingual Twitter analysis of public discourse surrounding COP 29. Using NLP, machine learning, and time series techniques, the study explores:
 
-2. Advanced NLP preprocessing pipeline:
-   - Text cleaning and normalization
-   - Language detection and filtering
-   - Efficient batch processing
+- **Aspect-Based Sentiment Analysis (ABSA)**
+- **Engagement Metrics & Influencer Insights**
+- **Temporal & Geographic Trends**
+- **Topic Clustering and Content Themes**
 
-3. Zero-shot aspect detection and sentiment classification using GPT4-mini
-4. Interactive visualizations and temporal analysis
+The dataset includes **182,347 tweets** collected between **11 October 2024 and 10 December 2024** via Twitter API.
 
-## Quick Start
-1. Clone the repository:
+---
+
+## 📊 Key Features & Insights
+
+### 🔍 Sentiment Analysis
+- Positive: 40.1%, Neutral: 32.0%, Negative: 27.9%
+- Most optimistic themes: *Technology & Innovation, Youth Activism*
+- Most critical themes: *Climate Finance, Equity, Policy Inaction*
+
+### 🔎 Aspect-Based Analysis
+- 15 dominant aspects identified (e.g., Climate Action, Biodiversity, Public Health)
+- Aspect × Sentiment heatmap highlights public perception by topic
+
+### 📈 Temporal Patterns
+- Peak activity: 21 November 2024 (14,981 tweets)
+- Sentiment trends aligned with COP speeches, announcements, and press events
+
+### 🧠 Topic Clustering
+- Optimal number of clusters: 9 (KMeans + TF-IDF + PCA)
+- Largest cluster (62.6%) focused on *green energy and sustainability*
+- Cluster sentiment distribution provided for each topic group
+
+### 🔥 Engagement Metrics
+- Composite engagement score from retweets, likes, replies, views
+- Viral content more likely to carry emotional or polarising sentiment
+- Most liked tweet: Zoo conservation (216,915 likes)
+- Most viewed tweet: Greenland melt crisis (9.96M views)
+
+### 🌐 Geographic & User Insights
+- Location-based sentiment patterns (when available)
+- Bias analysis of top 20 most active users
+- User clusters with 100% positive/negative bias identified
+
+---
+
+## 🧰 Technologies Used
+
+- Python 3.10  
+- Pandas, NumPy, Seaborn, Matplotlib  
+- Scikit-learn (KMeans, PCA, TF-IDF)  
+- Statsmodels (seasonal decomposition)  
+- NLTK (tokenisation, stopword filtering)  
+- WordCloud, Heatmaps, KDE, Time Series Plots  
+
+---
+
+## 📁 Project Structure
+
 ```bash
-git clone https://github.com/Cop29Paper/Cop29-sentiment.git
-cd cop29-sentiment
+├── README.md
+├── global_voices.pdf             # Project Report & Full Visuals
+├── analysis_results_with_sentiments-3.csv  # Cleaned and annotated dataset
+├── visuals/                      # Exported figures (optional)
+└── src/
+    ├── absa_analysis.py
+    ├── engagement_analysis.py
+    ├── time_series_trends.py
+    ├── clustering_model.py
+    └── wordclouds_ngrams.py
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+---
 
-3. Configure OpenAI API:
-```bash
-export OPENAI_API_KEY='your-api-key'
-```
+## 🧪 How to Reproduce
 
-4. Verify data files:
-   Ensure the following CSV files are present in the `data/` directory:
-   - pre_cop29.csv 
-   - during_cop29.csv 
-   - post_cop29.csv 
+1. Clone this repository  
+2. Install dependencies from `requirements.txt`  
+3. Run analysis notebook or Python script segments
+4. View outputs in the `visuals/` folder or generate plots inline
 
-5. Run the preprocessing pipeline:
-```bash
-python src/preprocessing/main.py --input_path data/raw --output_path data/processed
-```
+---
 
-6. Execute the ABSA analysis:
-```bash
-python src/analysis/absa.py --data_path data/processed --output_path results
-```
+## 📌 Suggested Visualisations for Poster
 
-## Model Implementation
-- **Core Model**: GPT4-mini for zero-shot aspect detection and sentiment analysis
-- **Preprocessing**: Custom pipeline for Twitter text normalization
-- **Prompting Strategy**: Engineered prompts for consistent ABSA outputs
+- **Bar Chart:** Sentiment by Aspect  
+- **Heatmap:** Aspect × Sentiment (%)  
+- **PCA Scatter Plot:** Topic Clusters by Sentiment  
+- **Line Chart:** Sentiment Over Time (Stacked + Normalised)  
+- **Heatmap:** Sentiment by Day of Week  
+- **Word Clouds:** Overall + Sentiment-Specific  
+- **Box Plot:** Engagement Scores by Sentiment  
+- **User Heatmap:** Bias of Top 15 Active Users
 
-### Key Advantages
-1. Zero-shot capabilities eliminate need for fine-tuning
-2. Efficient processing of large tweet volumes
-3. Consistent aspect detection across the dataset
-4. Robust handling of climate-specific terminology
+---
 
-## Results
-The analysis reveals several key findings:
-- Temporal shifts in sentiment across COP29 phases
-- Regional variations in climate finance perception
-- Strong correlation between policy announcements and public sentiment
+## 📚 References
 
-## Visualization Examples
-Key visualizations include:
-- Sentiment distribution heatmaps
-- Temporal trend analysis
-- Geographic sentiment comparisons
-- Aspect correlation matrices
+Refer to the full list in the bottom section of the poster or report PDF.
 
-## Contributing
-We welcome contributions! Please follow these steps:
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+---
 
-## Citation
-If you use this code or dataset in your research, please cite:
-```
-@article{author2024cop29,
-  title={Global Sentiments on Climate Action: A Twitter Analysis of COP29 Discussions},
-  journal={Environmental Data Science},
-  year={2024}
-}
-```
+## 🤝 Acknowledgements
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Thanks to collaborators from Carbonnote, Readrly, Pavolera Tech, Hankali Intel, and various UK/EU universities for contributions and feedback.
 
-## Acknowledgments
-- OpenAI for GPT4-mini model access
-- Climate research community for valuable feedback
+---
 
-## Contact
-For questions or feedback, please contact:
-- Email: wole@readrly.io
-- Twitter: @wolefizzy
+## 📬 Contact
+
+- Oluwole Fagbohun — `wole@readrly.io`  
+- LinkedIn: [linkedin.com/in/wolehat](https://www.linkedin.com/in/wolehat/)
+
+---
